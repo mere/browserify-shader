@@ -1,0 +1,36 @@
+{
+  "name": "browserify-shader",
+  "version": "0.0.1",
+  "description": "Super simple WebGL shader loader plugin for browserify",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mere/browserify-shader.git"
+  },
+  "keywords": [
+    "shader",
+    "webgl",
+    "vertex",
+    "fragment",
+    "browserify",
+    "transform"
+  ],
+  "author": "Zoltan Bourne",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mere/browserify-shader/issues"
+  },
+  "homepage": "https://github.com/mere/browserify-shader",
+  "devDependencies": {
+    "mocha": "~1.18.2",
+    "chai": "~1.9.1",
+    "grunt": "~0.4.4",
+    "gulp": "~3.6.2"
+  },
+  "dependencies": {
+    "through": "~2.3.4"
+  }
+}
