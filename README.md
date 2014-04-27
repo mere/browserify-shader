@@ -43,7 +43,8 @@ var myMaterial = new THREE.ShaderMaterial({
 ```
 
 ## Parameterised shaders:
-You can add **compile-time** parameters in your shaders:
+You can add **compile-time** parameters in your shaders.
+<br />Simply add `{{foo}}`-style parameters, eg.:
 ```c
 attribute vec3 pos;
 void main() {
