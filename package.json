@@ -26,9 +26,7 @@
   "homepage": "https://github.com/mere/browserify-shader",
   "devDependencies": {
     "mocha": "~1.18.2",
-    "chai": "~1.9.1",
-    "grunt": "~0.4.4",
-    "gulp": "~3.6.2"
+    "chai": "~1.9.1"
   },
   "dependencies": {
     "through": "~2.3.4"
