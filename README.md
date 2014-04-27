@@ -10,22 +10,55 @@ super simple browserify transform for loading webgl shaders
 ###Usage:
 
 Simply use `require()` to load your shader files:
+
 ```javascript
 var vs = require('./vertex.c');
+var fs = require('./fragment.c');
 ```
-Register your shader:
 
-**native**:
+#### WebGL API example:
 ```javascript
+var vs = require('./vertex.c');
+var fs = require('./fragment.c');
+
 var shader = gl.createShader(gl.VERTEX_SHADER)
 gl.shaderSource(shader, vs()); 
 gl.compileShader(shader);
 gl.attachShader(yourWebGLProg, shader);
 ```
 
-**THREE.js**:
+#### THREE.js example:
 ```javascript
+var vs = require('./vertex.c');
+var fs = require('./fragment.c');
+
+var myMaterial = new THREE.ShaderMaterial({
+        uniforms: uniforms,
+        attributes: attributes,
+        vertexShader: vs(),
+        fragmentShader: fs(),
+        transparent: true,
+        side: THREE.BackSide
+    });
 ```
+
+## Parameterised shaders:
+You can add **compile-time** parameters in your shaders:
+```c
+attribute vec3 pos;
+void main() {
+  gl_Position = vec4(pos, {{zoom}});
+}
+```
+Then in your code:
+```javascript
+var vs = require('./vertex.c');
+...
+gl.shaderSource(shader, vs({
+    zoom: "2.0"
+  })); 
+```
+For runtime parameters, use `uniform`-s in the shader.
 
 ## Build
 
