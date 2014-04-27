@@ -60,6 +60,30 @@ gl.shaderSource(shader, vs({
 ```
 For runtime parameters, use `uniform`-s in the shader.
 
+## Extensions
+browserify-shader recognises the following extensions by default:
+```javascript
+[
+    "c"
+  , "glsl"
+  , "vert"
+  , "frag"
+  , "vs"
+  , "fs"
+  , "gs"
+  , "vsh"
+  , "fsh"
+  , "gsh"
+  , "vshader"
+  , "fshader"
+  , "gshader"
+];
+```
+You can add/delete/modify this list using:
+```javascript
+require("browserify-shader").extensions = ["vertexshader", "fragmentshader", "c"]
+```
+
 ## Build
 
 ### CLI:
@@ -73,7 +97,6 @@ When compiling using Javascript code custom extensions can be set:
 ```javascript
 var browserify = require("browserify");
 var browserifyShader = require("browserify-shader")
-browserifyShader.extensions = ["vs", "fs", "c"]
 
 browserify("./index.js");
   .transform(browserifyShader);
@@ -85,9 +108,6 @@ browserify("./index.js");
 ```javascript
 var gulp = require('gulp')
 var source = require('vinyl-source-stream')
-var watchify = require('watchify')
-
-require("browserify-shader").extensions = ["vs", "fs", "c"]
 
 gulp.task('watch', function() {
   var bundler = watchify('./src/index.js');
