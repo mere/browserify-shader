@@ -73,7 +73,7 @@ When compiling using Javascript code custom extensions can be set:
 ```javascript
 var browserify = require("browserify");
 var browserifyShader = require("browserify-shader")
-browserifyShader.extensions["vs", "fs", "c"]
+browserifyShader.extensions = ["vs", "fs", "c"]
 
 browserify("./index.js");
   .transform(browserifyShader);
@@ -87,7 +87,7 @@ var gulp = require('gulp')
 var source = require('vinyl-source-stream')
 var watchify = require('watchify')
 
-require("browserify-shader").extensions["vs", "fs", "c"]
+require("browserify-shader").extensions = ["vs", "fs", "c"]
 
 gulp.task('watch', function() {
   var bundler = watchify('./src/index.js');
