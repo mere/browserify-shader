@@ -68,7 +68,7 @@ run browserify with the transform option:
 browserify -t browserify-shader entry-point.js
 ```
 
-### Node/grunt/gulp:
+### Node/grunt:
 When compiling using Javascript code custom extensions can be set:
 ```javascript
 var browserify = require("browserify");
@@ -79,4 +79,28 @@ browserify("./index.js");
   .transform(browserifyShader);
   .bundle()
   .pipe(fs.createWriteStream("./bundle.js"));
+```
+
+### Gulp + Watchify
+```javascript
+var gulp = require('gulp')
+var source = require('vinyl-source-stream')
+var watchify = require('watchify')
+
+require("browserify-shader").extensions["vs", "fs", "c"]
+
+gulp.task('watch', function() {
+  var bundler = watchify('./src/index.js');
+  bundler.transform('browserify-shader') 
+
+  bundler.on('update', rebundle)
+
+  function rebundle () {
+    return bundler.bundle()
+      .pipe(source('bundle.js'))
+      .pipe(gulp.dest('./dist'))
+  }
+
+  return rebundle()
+})
 ```
