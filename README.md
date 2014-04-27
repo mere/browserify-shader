@@ -5,7 +5,7 @@ super simple browserify transform for loading webgl shaders
 
 ###Installation:
 
-`npm install browserify-handlebars`
+`npm install browserify-shaders`
 
 ###Usage:
 
