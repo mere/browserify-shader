@@ -85,7 +85,7 @@ You can add/delete/modify this list using:
 require("browserify-shader").extensions = ["vertexshader", "fragmentshader", "c"]
 ```
 
-## Build
+## How to run 
 
 ### CLI:
 run browserify with the transform option:
