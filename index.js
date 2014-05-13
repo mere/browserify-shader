@@ -71,7 +71,7 @@ function middleware(file) {
   middleware.sanitize = function(text){
     text = text.replace(/\"/g, '\u005C\u0022')
     text = text.replace(/^(.*)/gm, '"$1')
-    text = text.replace(/(.+)$/gm, '$1" +')
+    text = text.replace(/(.+)$/gm, '$1 \\n" +')
     text = text.replace(/\+$/, '')
     return text
   }
