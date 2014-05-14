@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/mere/browserify-handlebars.svg)](https://travis-ci.org/mere/browserify-handlebars)
+[![Build Status](https://travis-ci.org/mere/browserify-shader.svg)](https://travis-ci.org/mere/browserify-shader)
 browserify-shader
 =================
 super simple browserify transform for loading webgl shaders
