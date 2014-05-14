@@ -1,7 +1,8 @@
+[![Build Status](https://travis-ci.org/mere/browserify-handlebars.svg)](https://travis-ci.org/mere/browserify-handlebars)
 browserify-shader
 =================
-
 super simple browserify transform for loading webgl shaders
+
 
 ###Installation:
 
