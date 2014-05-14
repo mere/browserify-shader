@@ -5,7 +5,7 @@ describe('browserify-shader plugin', function(){
   
   describe('substitution processing', function(){
     it('should sanitize new lines', function(){
-      expect(sut.sanitize('foo\nbar')).to.equal('"foo" +\n"bar" ')
+      expect(sut.sanitize('foo\nbar')).to.equal('"foo \\n" +\n"bar \\n" ')
     })
 
 
