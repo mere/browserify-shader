@@ -6,7 +6,7 @@ super simple browserify transform for loading webgl shaders
 ###Installation:
 
 `npm install browserify-shader --save`
-[![NPM](https://nodei.co/npm/browserify-shader.png?mini=true)]
+[![NPM](https://nodei.co/npm/browserify-shader.png?mini=true)](https://nodei.co/npm/browserify-shader/)
 
 ###Usage:
 
