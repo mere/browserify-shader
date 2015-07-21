@@ -3,12 +3,12 @@ browserify-shader [![Build Status](https://travis-ci.org/mere/browserify-shader.
 super simple browserify transform for loading webgl shaders
 
 
-###Installation:
+### Installation:
 
 `npm install browserify-shader --save`
 <br />[![NPM](https://nodei.co/npm/browserify-shader.png?mini=true)](https://nodei.co/npm/browserify-shader/)
 
-###Usage:
+### Usage:
 
 Simply use `require()` to load your shader files:
 
