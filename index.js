@@ -48,7 +48,7 @@ function middleware(file, options) {
           body = middleware.parameterise(body)
       }
       if (options.module === "es6" || options.module === "es2015") {
-          var module = 'export default const shader = ' + body + ';\n';
+          var module = 'export default ' + body + ';\n';
       }
       else {
           var module = 'module.exports = ' + body + ';\n';
