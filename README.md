@@ -94,6 +94,7 @@ The following options will work if you want to customize your transform:
   - enables parameterised shaders, **Note:** if disabled, modules will be required/imported as strings instead of functions.
 - module: String
   - configures module type incase your using an es6 transpiler with browserify, possibilities are "es6"/"es2015" and "common" (default).
+  
 ### CLI:
 run browserify with the transform option:
 ```bash
