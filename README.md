@@ -87,11 +87,20 @@ require("browserify-shader").extensions = ["vertexshader", "fragmentshader", "c"
 ```
 
 ## How to run 
+## Options
+The following options will work if you want to customize your transform:
 
+- parameterize: Boolean
+  - enables parameterised shaders, **Note:** if disabled, modules will be required/imported as strings instead of functions.
+- module: String
+  - configures module type incase your using an es6 transpiler with browserify, possibilities are "es6"/"es2015" and "common" (default).
 ### CLI:
 run browserify with the transform option:
 ```bash
 browserify -t browserify-shader entry-point.js
+```
+```bash
+browserify -t [browserify-shader --parameterize=true] entry-point.js
 ```
 
 ### Node/grunt:
@@ -101,7 +110,9 @@ var browserify = require("browserify");
 var browserifyShader = require("browserify-shader")
 
 browserify("./index.js");
-  .transform(browserifyShader);
+  .transform(browserifyShader, {
+     module: "es6"
+  });
   .bundle()
   .pipe(fs.createWriteStream("./bundle.js"));
 ```
