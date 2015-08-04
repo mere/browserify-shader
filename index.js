@@ -22,7 +22,7 @@ middleware.extensions = [
 /**
  *  create middleware for handling shader files
  */
-function middleware(file) {
+function middleware(file, options) {
   var matcher = new RegExp("\\."+ middleware.extensions.join("|")+"$")
   if (!matcher.test(file)) return through();
 
@@ -32,7 +32,7 @@ function middleware(file) {
   }
 
   var end = function () {
-    this.queue(createModule(input));
+    this.queue(createModule(input, options));
     this.queue(null);
   }
 
@@ -40,12 +40,19 @@ function middleware(file) {
 
 }
   /**
-   *  create commonJS module for the loaded shader
+   *  create module for the loaded shader
    */
-  function createModule(body, file) {
-      var text = middleware.sanitize(body)
-      var wrap = middleware.parameterise(text)
-      var module = 'module.exports = ' + wrap + ';\n';
+  function createModule(body, options) {
+      body = middleware.sanitize(body)
+      if (String(options.parameterize) !== 'false') {
+          body = middleware.parameterise(body)
+      }
+      if (options.module === "es6" || options.module === "es2015") {
+          var module = 'export default const shader = ' + body + ';\n';
+      }
+      else {
+          var module = 'module.exports = ' + body + ';\n';
+      }
       return module
     };
   
