@@ -9,8 +9,15 @@ gl.clear(gl.COLOR_BUFFER_BIT);
 
 var prog = gl.createProgram();
 
-addShader(gl.createShader(gl.VERTEX_SHADER), vs());
-addShader(gl.createShader(gl.FRAGMENT_SHADER), fs());
+if (typeof vs === "function"){
+  vs = vs();
+}
+if (typeof fs === "function"){
+  fs = fs();
+}
+
+addShader(gl.createShader(gl.VERTEX_SHADER), vs);
+addShader(gl.createShader(gl.FRAGMENT_SHADER), fs);
 
 gl.linkProgram(prog);
 gl.useProgram(prog);
