@@ -23,7 +23,7 @@ middleware.extensions = [
  *  create middleware for handling shader files
  */
 function middleware(file, options) {
-  var matcher = new RegExp("\\."+ middleware.extensions.join("|")+"$")
+  var matcher = new RegExp("\\.["+ middleware.extensions.join("|")+"]$")
   if (!matcher.test(file)) return through();
 
   var input = '';
