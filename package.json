@@ -1,6 +1,6 @@
 {
   "name": "browserify-shader",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Super simple WebGL shader loader plugin for browserify",
   "main": "index.js",
   "scripts": {
